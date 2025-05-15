@@ -6,6 +6,7 @@ import Header from "@/components/common/Header";
 import Input from "@/components/common/Input";
 import Empty from "@/components/Home/Empty";
 import CheckItem from "@/components/Home/CheckItem";
+import axios from "@/utils/axios";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -15,20 +16,11 @@ export default function Home() {
     if (!inputValue.trim()) return;
 
     const tenantId = process.env.NEXT_PUBLIC_TENANT_ID;
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     try {
-      const res = await fetch(`${baseUrl}/api/${tenantId}/items`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: inputValue.trim() }),
+      await axios.post(`/api/${tenantId}/items`, {
+        name: inputValue.trim(),
       });
-
-      if (!res.ok) {
-        throw new Error("등록 실패");
-      }
 
       setInputValue("");
       console.log("할 일 등록 완료");
