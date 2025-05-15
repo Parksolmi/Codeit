@@ -19,6 +19,7 @@ export default function Button({
     icon: "w-10 h-10 text-xl flex items-center justify-center",
   };
 
+  const resolvedBgColor = active ? bgColor : "bg-slate-200";
   const textColorClass = active ? "text-white" : "text-black";
   const paddingClass = children ? "px-7 py-2" : "";
 
@@ -27,7 +28,7 @@ export default function Button({
       onClick={onClick}
       className={`
         rounded-full font-semibold
-        ${bgColor} ${textColorClass} border-2 border-slate-900
+        ${resolvedBgColor} ${textColorClass} border-2 border-slate-900
         ${sizeClasses[size]} flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_#0F172A]
         ${paddingClass}
       `}
