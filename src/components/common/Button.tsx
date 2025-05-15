@@ -1,7 +1,7 @@
 interface ButtonProps {
   children?: React.ReactNode;
   bgColor?: string;
-  size?: "default" | "large" | "icon";
+  size?: "default" | "sm";
   onClick?: () => void;
   active?: boolean;
 }
@@ -13,17 +13,10 @@ export default function Button({
   onClick,
   active = false,
 }: ButtonProps) {
-  // const sizeClasses = {
-  //   default: "px-4 py-2 text-sm",
-  //   large: "px-6 py-3 text-base",
-  //   icon: "w-10 h-10 text-xl flex items-center justify-center",
-  // };
-
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
   const textColorClass = active ? "text-white" : "text-black";
   const paddingClass = children ? "px-10 py-0" : "";
 
-  //text-sm
   return (
     <button
       onClick={onClick}

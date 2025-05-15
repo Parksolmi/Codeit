@@ -119,7 +119,7 @@ export default function Home() {
                       inputValue.trim().length > 0 ? "" : "filter invert"
                     }`}
                   />
-                  추가하기
+                  <span className="hidden sm:inline">추가하기</span>
                 </>
               )}
             </Button>
@@ -130,7 +130,7 @@ export default function Home() {
               <SyncLoader color="#7C3AED" />
             </div>
           ) : (
-            <div className="flex justify-evenly flex-row items-start gap-4 mt-6 w-full max-w-[1000px] px-4 mx-auto">
+            <div className="flex justify-evenly flex-col items-start gap-4 mt-6 w-full max-w-[1000px] px-4 mx-auto md:flex-row">
               <TaskSection type="todo" isEmpty={todoItems.length === 0}>
                 {todoItems.length === 0 ? (
                   <>

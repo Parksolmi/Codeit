@@ -15,7 +15,7 @@ export default function TaskSection({
     type === "todo" ? "/images/todo-text.png" : "/images/done-text.png";
 
   return (
-    <div className="relative w-1/2 h-full flex flex-col items-start gap-4">
+    <div className="relative w-full md:w-1/2 h-full flex flex-col items-start gap-4">
       <img
         src={labelImageSrc}
         alt={`${type} label`}
