@@ -345,8 +345,8 @@ img, video {
   display: none;
 }
 
-.fixed {
-  position: fixed;
+.pointer-events-none {
+  pointer-events: none;
 }
 
 .absolute {
@@ -412,6 +412,10 @@ img, video {
 
 .h-full {
   height: 100%;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .w-1\/2 {
@@ -590,10 +594,6 @@ img, video {
   padding-bottom: 10px;
 }
 
-.pb-\[3px\] {
-  padding-bottom: 3px;
-}
-
 .text-center {
   text-align: center;
 }
@@ -648,6 +648,10 @@ img, video {
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.opacity-50 {
+  opacity: .5;
 }
 
 .shadow-\[2px_2px_0px_0px_\#0F172A\] {

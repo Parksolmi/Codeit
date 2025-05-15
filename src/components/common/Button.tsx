@@ -36,11 +36,6 @@ export default function Button({
         whitespace-nowrap
       `}
     >
-      <img
-        src="/images/plus-icon.svg"
-        alt="plus"
-        className={`w-3 h-3 ${active ? "" : "filter invert"}`}
-      />
       {children}
     </button>
   );

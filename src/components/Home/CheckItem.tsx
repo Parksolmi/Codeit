@@ -1,17 +1,22 @@
+import { ClipLoader } from "react-spinners";
+
 interface CheckItemProps {
   label: string;
   checked: boolean;
   onToggle: () => void;
+  isLoading?: boolean;
 }
 
 export default function CheckItem({
   label,
   checked,
   onToggle,
+  isLoading = false,
 }: CheckItemProps) {
   return (
     <button
       onClick={onToggle}
+      disabled={isLoading}
       className={`
         w-full h-[48px] flex items-center gap-4 px-3 py-3 rounded-full border-2 font-medium
         ${
@@ -20,6 +25,7 @@ export default function CheckItem({
             : "bg-white border-slate-900"
         }
         text-black
+        ${isLoading ? "opacity-50 pointer-events-none" : ""}
       `}
     >
       <div
@@ -32,13 +38,15 @@ export default function CheckItem({
           }
         `}
       >
-        {checked && (
+        {isLoading ? (
+          <ClipLoader color="#F43F5E" size={20} />
+        ) : checked ? (
           <img
             src="/images/checked-icon.svg"
             alt="체크됨"
             className="w-4 h-4"
           />
-        )}
+        ) : null}
       </div>
 
       <span
