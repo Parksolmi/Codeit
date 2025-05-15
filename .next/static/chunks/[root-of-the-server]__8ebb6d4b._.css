@@ -458,6 +458,10 @@ img, video {
   max-width: 1000px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -592,6 +596,10 @@ img, video {
 .py-\[10px\] {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.pl-20 {
+  padding-left: 5rem;
 }
 
 .text-center {
