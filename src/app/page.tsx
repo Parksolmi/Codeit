@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/components/Button";
-import Header from "@/components/Header";
-import Input from "@/components/Input";
-import Empty from "@/components/Empty";
+import Button from "@/components/common/Button";
+import Header from "@/components/common/Header";
+import Input from "@/components/common/Input";
+import Empty from "@/components/Home/Empty";
+import CheckItem from "@/components/Home/CheckItem";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
+  const [checked, setChecked] = useState(false);
 
   return (
     <>
@@ -25,7 +27,13 @@ export default function Home() {
             </Button>
           </div>
           <div className="flex justify-evenly flex-row items-center gap-4 mt-6 w-full max-w-[1000px] px-4 mx-auto">
-            <Empty type="todo">
+            <CheckItem
+              label="비타민 챙겨 먹기"
+              checked={checked}
+              onToggle={() => setChecked(!checked)}
+            />
+
+            {/* <Empty type="todo">
               <p>할 일이 없어요.</p>
               <p>TODO를 새롭게 추가해주세요!</p>
             </Empty>
@@ -33,7 +41,7 @@ export default function Home() {
             <Empty type="done">
               <p>아직 다 한 일이 없어요.</p>
               <p>해야 할 일을 체크해보세요!</p>
-            </Empty>
+            </Empty> */}
           </div>
         </div>
       </main>
