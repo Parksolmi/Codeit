@@ -1,9 +1,16 @@
 export default function Input() {
   return (
-    <header className="w-full border-b-[1px] border-b-slate-200">
-      <div className="pl-20 py-[10px]">
-        <img src="/images/logo-char.png" alt="Logo" className="w-20" />
-      </div>
-    </header>
+    <div className="relative w-[1000px] h-[46px]">
+      <img
+        src="/images/input.png"
+        alt="Input Background"
+        className="w-full h-full rounded-full"
+      />
+      <input
+        type="text"
+        placeholder="할 일을 입력해주세요"
+        className="absolute top-0 left-0 w-full h-full bg-transparent outline-none px-6 text-sm"
+      />
+    </div>
   );
 }
