@@ -11,6 +11,32 @@ export default function Home() {
   const [inputValue, setInputValue] = useState("");
   const [checked, setChecked] = useState(false);
 
+  const handleAddTodo = async () => {
+    if (!inputValue.trim()) return;
+
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID;
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    try {
+      const res = await fetch(`${baseUrl}/api/${tenantId}/items`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: inputValue.trim() }),
+      });
+
+      if (!res.ok) {
+        throw new Error("등록 실패");
+      }
+
+      setInputValue("");
+      console.log("할 일 등록 완료");
+    } catch (err) {
+      console.error("에러 발생:", err);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -22,6 +48,7 @@ export default function Home() {
               active={inputValue.trim().length > 0}
               bgColor="bg-violet-600"
               size="default"
+              onClick={handleAddTodo}
             >
               추가하기
             </Button>
@@ -32,7 +59,6 @@ export default function Home() {
               checked={checked}
               onToggle={() => setChecked(!checked)}
             />
-
             {/* <Empty type="todo">
               <p>할 일이 없어요.</p>
               <p>TODO를 새롭게 추가해주세요!</p>

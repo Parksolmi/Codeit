@@ -5,19 +5,18 @@ interface InputProps {
 
 export default function Input({ value, onChange }: InputProps) {
   return (
-    <div className="relative w-full h-[48px] rounded-full">
-      <img
-        src="/images/input.png"
-        alt="Input Background"
-        className="w-full h-full"
-      />
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="할 일을 입력해주세요"
-        className="absolute top-0 left-0 w-full h-full bg-transparent outline-none px-6 text-sm pb-[3px]"
-      />
-    </div>
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder="할 일을 입력해주세요"
+      className={`
+        w-full h-[48px] px-6 pb-[3px] text-sm
+        rounded-full border-2 border-slate-900
+        bg-slate-100 outline-none
+        placeholder:text-slate-400
+        shadow-[4px_4px_0px_0px_#0F172A]
+      `}
+    />
   );
 }
