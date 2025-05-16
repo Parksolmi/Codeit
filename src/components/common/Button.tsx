@@ -1,20 +1,26 @@
+import { SyncLoader } from "react-spinners";
+
 interface ButtonProps {
   children?: React.ReactNode;
   bgColor?: string;
-  size?: "default" | "sm";
+  textColor?: string;
   onClick?: () => void;
   active?: boolean;
+  iconSrc?: string;
+  isAdding?: boolean;
 }
 
 export default function Button({
   children,
   bgColor = "bg-slate-200",
-  size = "default",
+  textColor = "text-black",
   onClick,
   active = false,
+  iconSrc,
+  isAdding = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
-  const textColorClass = active ? "text-white" : "text-black";
+  const textColorClass = active ? textColor : "text-black";
   const paddingClass = children ? "px-10 py-0" : "";
 
   return (
@@ -29,7 +35,20 @@ export default function Button({
         whitespace-nowrap
       `}
     >
-      {children}
+      {isAdding ? (
+        <SyncLoader color="#ffffff" size={6} margin={2} />
+      ) : (
+        <>
+          {iconSrc && (
+            <img
+              src={iconSrc}
+              alt="아이콘"
+              className={`w-4 h-4 ${!active ? "filter invert" : ""}`}
+            />
+          )}
+          <span>{children}</span>
+        </>
+      )}
     </button>
   );
 }

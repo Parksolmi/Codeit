@@ -105,23 +105,12 @@ export default function Home() {
             <Button
               active={inputValue.trim().length > 0}
               bgColor="bg-violet-600"
-              size="default"
+              textColor="text-white"
               onClick={handleAddTodo}
+              iconSrc="/images/plus-icon.svg"
+              isAdding={isAdding}
             >
-              {isAdding ? (
-                <SyncLoader color="#ffffff" size={6} margin={2} />
-              ) : (
-                <>
-                  <img
-                    src="/images/plus-icon.svg"
-                    alt="plus"
-                    className={`w-3 h-3 ${
-                      inputValue.trim().length > 0 ? "" : "filter invert"
-                    }`}
-                  />
-                  <span className="hidden sm:inline">추가하기</span>
-                </>
-              )}
+              추가하기
             </Button>
           </div>
 

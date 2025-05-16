@@ -1,11 +1,12 @@
 "use client";
 
+import Button from "@/components/common/Button";
 import Header from "@/components/common/Header";
 import CheckItemDetail from "@/components/Detail/CheckItemDetail";
 import ImageUploadBox from "@/components/Detail/ImageUploadBox";
+import Memo from "@/components/Detail/Memo";
 import instance from "@/utils/axios";
 import { useParams } from "next/navigation";
-import { todo } from "node:test";
 import { useEffect, useState } from "react";
 
 interface TodoItem {
@@ -38,6 +39,10 @@ export default function Detail() {
     }
   };
 
+  const handleMemoChange = (newMemo: string) => {
+    setTodoItem((prev) => (prev ? { ...prev, memo: newMemo } : prev));
+  };
+
   useEffect(() => {
     handleGetTodo();
   }, [TENANT_ID]);
@@ -51,9 +56,32 @@ export default function Detail() {
             label={todoItem?.name}
             checked={todoItem?.isCompleted}
           />
-          <div>
+          <div className="w-full flex justify-center items-center gap-4">
             <ImageUploadBox />
-            {/* <Memo /> */}
+            <Memo value={todoItem?.memo || ""} onChange={handleMemoChange} />
+          </div>
+          <div className="w-full flex justify-end gap-4">
+            <Button
+              iconSrc="/images/editcheck-icon.png"
+              active={true}
+              textColor="text-slate-900"
+              onClick={() => {
+                console.log("수정완료 클릭");
+              }}
+            >
+              수정완료
+            </Button>
+            <Button
+              iconSrc="/images/x-icon.png"
+              onClick={() => {
+                console.log("삭제하기 클릭");
+              }}
+              bgColor="bg-rose-500"
+              textColor="text-white"
+              active={true}
+            >
+              삭제하기
+            </Button>
           </div>
         </div>
       </main>
