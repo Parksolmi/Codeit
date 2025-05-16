@@ -11,13 +11,13 @@ export default function ImageUploadBox() {
   };
 
   return (
-    <label className="w-[250px] h-[250px] border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer">
-      <img
-        src="/images/upload-placeholder.svg"
-        alt="Upload"
-        className="w-8 h-8"
-      />
+    <label className="w-[300px] h-[250px] border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer relative">
+      <img src="/images/upload-img.png" alt="Upload" className="w-12 h-12" />
       <input type="file" className="hidden" onChange={handleChange} />
+
+      <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+        <img src="/images/plus-slate-icon.png" alt="추가" className="w-4 h-4" />
+      </div>
     </label>
   );
 }

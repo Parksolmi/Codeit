@@ -51,8 +51,10 @@ export default function Detail() {
             label={todoItem?.name}
             checked={todoItem?.isCompleted}
           />
-          {/* <ImageUploadBox /> */}
-          {/* <Memo /> */}
+          <div>
+            <ImageUploadBox />
+            {/* <Memo /> */}
+          </div>
         </div>
       </main>
     </>
