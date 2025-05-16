@@ -17,6 +17,7 @@ module.exports = {
         },
         violet: {
           600: "#7C3AED",
+          200: "#DDD6FE",
           100: "#EDE9FE",
         },
         rose: {

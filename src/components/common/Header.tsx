@@ -1,3 +1,5 @@
+"use client";
+
 export default function Header() {
   return (
     <header className="w-full border-b-[1px] bg-white border-b-slate-200">

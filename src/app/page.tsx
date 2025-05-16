@@ -37,7 +37,7 @@ export default function Home() {
       });
 
       setInputValue("");
-      await handleGetTodo(); // 추가 후 리스트 갱신
+      await handleGetTodos();
       console.log("할 일 등록 완료");
     } catch (err) {
       console.error("에러 발생:", err);
@@ -46,7 +46,7 @@ export default function Home() {
     }
   };
 
-  const handleGetTodo = async () => {
+  const handleGetTodos = async () => {
     try {
       const response = await instance.get<TodoItem[]>(
         `/api/${TENANT_ID}/items`
@@ -87,12 +87,12 @@ export default function Home() {
     } catch (err) {
       console.error("토글 에러:", err);
     } finally {
-      setTogglingId(null); // ✅ 완료 시 초기화
+      setTogglingId(null);
     }
   };
 
   useEffect(() => {
-    handleGetTodo();
+    handleGetTodos();
   }, [TENANT_ID]);
 
   return (
@@ -140,6 +140,7 @@ export default function Home() {
                 ) : (
                   todoItems.map((item: any) => (
                     <CheckItem
+                      id={item.id}
                       key={item.id}
                       label={item.name}
                       checked={item.isCompleted}
@@ -158,6 +159,7 @@ export default function Home() {
                 ) : (
                   doneItems.map((item: any) => (
                     <CheckItem
+                      id={item.id}
                       key={item.id}
                       label={item.name}
                       checked={item.isCompleted}

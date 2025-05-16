@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { ClipLoader } from "react-spinners";
 
 interface CheckItemProps {
+  id: number;
   label: string;
   checked: boolean;
   onToggle: () => void;
@@ -11,6 +12,7 @@ interface CheckItemProps {
 }
 
 export default function CheckItem({
+  id,
   label,
   checked,
   onToggle,
@@ -34,13 +36,9 @@ export default function CheckItem({
         onClick={onToggle}
         disabled={isLoading}
         className={`
-          w-6 h-6 rounded-full flex items-center justify-center border-2
+          w-7 h-7 rounded-full flex items-center justify-center border-2
           shrink-0
-          ${
-            checked
-              ? "bg-violet-600 border-transparent"
-              : "bg-[#FAF9EC] border-slate-900"
-          }
+          ${checked ? "border-transparent" : "bg-[#FEFCE8] border-slate-900"}
           ${isLoading ? "opacity-50 pointer-events-none" : ""}
         `}
       >
@@ -50,13 +48,13 @@ export default function CheckItem({
           <img
             src="/images/checked-icon.svg"
             alt="체크됨"
-            className="w-4 h-4"
+            className="w-7 h-7"
           />
         ) : null}
       </button>
 
       <div
-        onClick={() => router.push("/detail")}
+        onClick={() => router.push(`/${id}`)}
         className={`w-full text-sm text-slate-800 cursor-pointer ${
           checked ? "line-through" : ""
         }`}

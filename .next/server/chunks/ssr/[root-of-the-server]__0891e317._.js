@@ -49,6 +49,7 @@ __turbopack_context__.s({
     "default": (()=>Header)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+"use client";
 ;
 function Header() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -62,17 +63,17 @@ function Header() {
                 className: "w-[151px]"
             }, void 0, false, {
                 fileName: "[project]/src/components/common/Header.tsx",
-                lineNumber: 8,
+                lineNumber: 10,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/common/Header.tsx",
-            lineNumber: 4,
+            lineNumber: 6,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/common/Header.tsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }
@@ -212,7 +213,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spi
 ;
 ;
 ;
-function CheckItem({ label, checked, onToggle, isLoading = false }) {
+function CheckItem({ id, label, checked, onToggle, isLoading = false }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `
@@ -225,9 +226,9 @@ function CheckItem({ label, checked, onToggle, isLoading = false }) {
                 onClick: onToggle,
                 disabled: isLoading,
                 className: `
-          w-6 h-6 rounded-full flex items-center justify-center border-2
+          w-7 h-7 rounded-full flex items-center justify-center border-2
           shrink-0
-          ${checked ? "bg-violet-600 border-transparent" : "bg-[#FAF9EC] border-slate-900"}
+          ${checked ? "border-transparent" : "bg-[#FEFCE8] border-slate-900"}
           ${isLoading ? "opacity-50 pointer-events-none" : ""}
         `,
                 children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$ClipLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipLoader$3e$__["ClipLoader"], {
@@ -235,35 +236,35 @@ function CheckItem({ label, checked, onToggle, isLoading = false }) {
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/src/components/Home/CheckItem.tsx",
-                    lineNumber: 48,
+                    lineNumber: 46,
                     columnNumber: 11
                 }, this) : checked ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                     src: "/images/checked-icon.svg",
                     alt: "체크됨",
-                    className: "w-4 h-4"
+                    className: "w-7 h-7"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Home/CheckItem.tsx",
-                    lineNumber: 50,
+                    lineNumber: 48,
                     columnNumber: 11
                 }, this) : null
             }, void 0, false, {
                 fileName: "[project]/src/components/Home/CheckItem.tsx",
-                lineNumber: 33,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                onClick: ()=>router.push("/detail"),
+                onClick: ()=>router.push(`/${id}`),
                 className: `w-full text-sm text-slate-800 cursor-pointer ${checked ? "line-through" : ""}`,
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/Home/CheckItem.tsx",
-                lineNumber: 58,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Home/CheckItem.tsx",
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
@@ -435,7 +436,7 @@ function Home() {
                 name: inputValue.trim()
             });
             setInputValue("");
-            await handleGetTodo(); // 추가 후 리스트 갱신
+            await handleGetTodos();
             console.log("할 일 등록 완료");
         } catch (err) {
             console.error("에러 발생:", err);
@@ -443,7 +444,7 @@ function Home() {
             setIsAdding(false);
         }
     };
-    const handleGetTodo = async ()=>{
+    const handleGetTodos = async ()=>{
         try {
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`/api/${TENANT_ID}/items`);
             const data = response.data;
@@ -488,11 +489,11 @@ function Home() {
         } catch (err) {
             console.error("토글 에러:", err);
         } finally{
-            setTogglingId(null); // ✅ 완료 시 초기화
+            setTogglingId(null);
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        handleGetTodo();
+        handleGetTodos();
     }, [
         TENANT_ID
     ]);
@@ -601,6 +602,7 @@ function Home() {
                                             }, this)
                                         ]
                                     }, void 0, true) : todoItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$CheckItem$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            id: item.id,
                                             label: item.name,
                                             checked: item.isCompleted,
                                             onToggle: ()=>handleToggle(item.id, item.isCompleted),
@@ -624,30 +626,31 @@ function Home() {
                                                 children: "아직 다 한 일이 없어요."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 156,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "해야 할 일을 체크해보세요!"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 157,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true) : doneItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Home$2f$CheckItem$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            id: item.id,
                                             label: item.name,
                                             checked: item.isCompleted,
                                             onToggle: ()=>handleToggle(item.id, item.isCompleted),
                                             isLoading: togglingId === item.id
                                         }, item.id, false, {
                                             fileName: "[project]/src/app/page.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 161,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 153,
                                     columnNumber: 15
                                 }, this)
                             ]
