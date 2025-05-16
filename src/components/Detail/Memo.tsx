@@ -13,7 +13,7 @@ export default function Memo({ value, onChange }: MemoProps) {
         bg-[length:auto] bg-contain overflow-hidden
       `}
       style={{
-        backgroundSize: "810px 350px",
+        backgroundSize: "100% 350px",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top",
       }}

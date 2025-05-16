@@ -56,10 +56,15 @@ export default function Detail() {
             label={todoItem?.name}
             checked={todoItem?.isCompleted}
           />
-          <div className="w-full flex justify-center items-center gap-4">
-            <ImageUploadBox />
-            <Memo value={todoItem?.memo || ""} onChange={handleMemoChange} />
+          <div className="w-full flex flex-col md:flex-row  justify-center items-center gap-4">
+            <div className="w-full md:flex-1">
+              <ImageUploadBox />
+            </div>
+            <div className="w-full md:flex-[2]">
+              <Memo value={todoItem?.memo || ""} onChange={handleMemoChange} />
+            </div>
           </div>
+
           <div className="w-full flex justify-end gap-4">
             <Button
               iconSrc="/images/editcheck-icon.png"

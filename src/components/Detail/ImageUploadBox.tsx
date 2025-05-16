@@ -11,7 +11,7 @@ export default function ImageUploadBox() {
   };
 
   return (
-    <label className="w-[300px] h-[250px] border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer relative">
+    <label className="w-full h-[250px] border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer relative">
       <img src="/images/upload-img.png" alt="Upload" className="w-12 h-12" />
       <input type="file" className="hidden" onChange={handleChange} />
 
