@@ -666,6 +666,11 @@ img, video {
   background-repeat: no-repeat;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -792,6 +797,10 @@ img, video {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-40 {
+  opacity: .4;
 }
 
 .shadow-\[2px_2px_0px_0px_\#0F172A\] {
