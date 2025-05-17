@@ -1,20 +1,20 @@
 interface CheckItemDetailProps {
-  label: string | undefined;
-  checked: boolean | undefined;
+  label: string;
+  checked: boolean;
+  onLabelChange: (newLabel: string) => void;
 }
 
 export default function CheckItemDetail({
   label,
   checked,
+  onLabelChange,
 }: CheckItemDetailProps) {
-  if (checked === undefined) return null;
-
   return (
     <div
       className={`
-    w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 
-    ${checked ? "bg-violet-200" : ""}
-  `}
+        w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 
+        ${checked ? "bg-violet-200" : ""}
+      `}
     >
       <div className="w-full flex justify-center items-center gap-4">
         {checked ? (
@@ -24,13 +24,15 @@ export default function CheckItemDetail({
             className="w-7 h-7"
           />
         ) : (
-          <div
-            className={`
-            w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black
-          `}
-          />
+          <div className="w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black" />
         )}
-        <span className="text-black underline text-sm">{label}</span>
+        <input
+          type="text"
+          value={label}
+          onChange={(e) => onLabelChange(e.target.value)}
+          className="bg-transparent border-none outline-none text-sm text-black underline"
+          style={{ width: `${label.length || 1}ch` }}
+        />
       </div>
     </div>
   );

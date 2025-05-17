@@ -44,6 +44,10 @@ export default function Detail() {
     setTodoItem((prev) => (prev ? { ...prev, memo: newMemo } : prev));
   };
 
+  const handleLabelChange = (newLabel: string) => {
+    setTodoItem((prev) => (prev ? { ...prev, name: newLabel } : prev));
+  };
+
   const handleImageSelect = async (file: File) => {
     try {
       const formData = new FormData();
@@ -111,8 +115,9 @@ export default function Detail() {
       <main className="w-full max-w-[1000px] min-h-screen bg-white px-4 mx-auto ">
         <div className="flex flex-col items-center gap-6 pt-8">
           <CheckItemDetail
-            label={todoItem?.name}
-            checked={todoItem?.isCompleted}
+            label={todoItem?.name || ""}
+            checked={todoItem?.isCompleted || false}
+            onLabelChange={handleLabelChange}
           />
           <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="w-full md:flex-1">

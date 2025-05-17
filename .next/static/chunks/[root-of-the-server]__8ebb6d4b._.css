@@ -646,6 +646,10 @@ img, video {
   border-style: dashed;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
@@ -722,6 +726,11 @@ img, video {
 .bg-rose-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1));
+}
+
+.bg-lime-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 242 100 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[repeating-linear-gradient\(to_bottom\,transparent\,transparent_23px\,\#fcd34d_24px\)\] {
