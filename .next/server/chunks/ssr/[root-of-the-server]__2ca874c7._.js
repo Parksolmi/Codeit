@@ -514,7 +514,6 @@ function Detail() {
             console.error("이미지 업로드 또는 업데이트 중 에러 발생:", err);
         }
     };
-    // todoItem 데이터 patch
     const handleUpdateTodo = async ()=>{
         if (!todoItem) return;
         try {
@@ -524,17 +523,18 @@ function Detail() {
                 imageUrl: todoItem.imageUrl ?? "",
                 isCompleted: todoItem.isCompleted
             });
-            console.log("할 일 수정 완료");
         } catch (err) {
             console.error("에러 발생:", err);
         }
     };
-    // todoItem 데이터 삭제
     const handleDeleteTodo = async ()=>{
         if (!todoItem) return;
         try {
+            const confirm = window.confirm("정말 삭제하시겠습니까?");
+            if (!confirm) return;
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`/api/${TENANT_ID}/items/${todoItem.id}`);
-            console.log("할 일 삭제 완료");
+            alert("삭제되었습니다.");
+            window.location.href = "/";
         } catch (err) {
             console.error("에러 발생:", err);
         }
@@ -624,9 +624,7 @@ function Detail() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     iconSrc: "/images/x-icon.png",
-                                    onClick: ()=>{
-                                        console.log("삭제하기 클릭");
-                                    },
+                                    onClick: handleDeleteTodo,
                                     bgColor: "bg-rose-500",
                                     textColor: "text-white",
                                     active: true,

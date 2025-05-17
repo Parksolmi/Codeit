@@ -70,7 +70,6 @@ export default function Detail() {
     }
   };
 
-  // todoItem 데이터 patch
   const handleUpdateTodo = async () => {
     if (!todoItem) return;
     try {
@@ -80,18 +79,19 @@ export default function Detail() {
         imageUrl: todoItem.imageUrl ?? "",
         isCompleted: todoItem.isCompleted,
       });
-      console.log("할 일 수정 완료");
     } catch (err) {
       console.error("에러 발생:", err);
     }
   };
 
-  // todoItem 데이터 삭제
   const handleDeleteTodo = async () => {
     if (!todoItem) return;
     try {
+      const confirm = window.confirm("정말 삭제하시겠습니까?");
+      if (!confirm) return;
       await instance.delete(`/api/${TENANT_ID}/items/${todoItem.id}`);
-      console.log("할 일 삭제 완료");
+      alert("삭제되었습니다.");
+      window.location.href = "/";
     } catch (err) {
       console.error("에러 발생:", err);
     }
@@ -137,9 +137,7 @@ export default function Detail() {
             </Button>
             <Button
               iconSrc="/images/x-icon.png"
-              onClick={() => {
-                console.log("삭제하기 클릭");
-              }}
+              onClick={handleDeleteTodo}
               bgColor="bg-rose-500"
               textColor="text-white"
               active={true}
