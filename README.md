@@ -35,3 +35,7 @@ NEXT_PUBLIC_TENANT_ID=paka36
 - `NEXT_PUBLIC_API_BASE_URL`: API 요청의 기본 도메인 주소
 - `NEXT_PUBLIC_TENANT_ID`: 고유 테넌트 ID
 
+---
+
+### 🚀 Vercel로 배포
+- https://codeit-todo-two.vercel.app/
