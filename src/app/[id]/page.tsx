@@ -9,6 +9,7 @@ import instance from "@/utils/axios";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
+import { useRouter } from "next/navigation";
 
 interface TodoItem {
   id: number;
@@ -20,6 +21,7 @@ interface TodoItem {
 }
 
 export default function Detail() {
+  const router = useRouter();
   const params = useParams();
   const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID;
 
@@ -126,7 +128,7 @@ export default function Detail() {
     } finally {
       setIsEditing(false);
       alert("수정되었습니다.");
-      window.location.href = "/";
+      router.push("/");
     }
   };
 
@@ -139,12 +141,12 @@ export default function Detail() {
       const confirm = window.confirm("정말 삭제하시겠습니까?");
       if (!confirm) return;
       await instance.delete(`/api/${TENANT_ID}/items/${todoItem.id}`);
-      alert("삭제되었습니다.");
-      window.location.href = "/";
     } catch (err) {
       console.error("에러 발생:", err);
     } finally {
       setIsDeleting(false);
+      alert("삭제되었습니다.");
+      router.push("/");
     }
   };
 

@@ -569,7 +569,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spi
 ;
 ;
 ;
+;
 function Detail() {
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useParams"])();
     const TENANT_ID = ("TURBOPACK compile-time value", "paka36");
     const [isFetched, setIsFetched] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -659,7 +661,7 @@ function Detail() {
         } finally{
             setIsEditing(false);
             alert("수정되었습니다.");
-            window.location.href = "/";
+            router.push("/");
         }
     };
     const handleDeleteTodo = async ()=>{
@@ -670,12 +672,12 @@ function Detail() {
             const confirm = window.confirm("정말 삭제하시겠습니까?");
             if (!confirm) return;
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].delete(`/api/${TENANT_ID}/items/${todoItem.id}`);
-            alert("삭제되었습니다.");
-            window.location.href = "/";
         } catch (err) {
             console.error("에러 발생:", err);
         } finally{
             setIsDeleting(false);
+            alert("삭제되었습니다.");
+            router.push("/");
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -695,7 +697,7 @@ function Detail() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 169,
+                lineNumber: 171,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -706,12 +708,12 @@ function Detail() {
                         color: "#7C3AED"
                     }, void 0, false, {
                         fileName: "[project]/src/app/[id]/page.tsx",
-                        lineNumber: 173,
+                        lineNumber: 175,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 172,
+                    lineNumber: 174,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col items-center gap-6 pt-8",
@@ -723,7 +725,7 @@ function Detail() {
                             onLabelChange: handleLabelChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 177,
+                            lineNumber: 179,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,12 +739,12 @@ function Detail() {
                                         onImageSelect: handleImageSelect
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 187,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 186,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -752,18 +754,18 @@ function Detail() {
                                         onChange: handleMemoChange
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 194,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 191,
+                                    lineNumber: 193,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 183,
+                            lineNumber: 185,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,7 +781,7 @@ function Detail() {
                                     children: "수정완료"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 200,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -792,24 +794,24 @@ function Detail() {
                                     children: "삭제하기"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 212,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 199,
+                            lineNumber: 201,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 176,
+                    lineNumber: 178,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 170,
+                lineNumber: 172,
                 columnNumber: 7
             }, this)
         ]
