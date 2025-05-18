@@ -22,7 +22,6 @@ export default function Button({
   textInvert = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
-  const textColorClass = active ? textColor : "text-black";
   const paddingClass = children ? "px-10 py-0" : "";
 
   return (
@@ -30,29 +29,39 @@ export default function Button({
       onClick={onClick}
       className={`
         h-[48px]
+        min-w-[120px]
         rounded-full font-semibold text-sm 
-        ${resolvedBgColor} ${textColorClass} border-2 border-slate-900
+        ${resolvedBgColor} ${textColor} border-2 border-slate-900
         flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_#0F172A]
         ${paddingClass}
         whitespace-nowrap
       `}
     >
-      {isLoading ? (
-        <SyncLoader color="#ffffff" size={6} margin={2} />
-      ) : (
-        <>
-          {iconSrc && (
-            <img
-              src={iconSrc}
-              alt="아이콘"
-              className={`w-4 h-4 ${
-                textInvert && !active ? "filter invert" : ""
-              }`}
-            />
-          )}
-          <span>{children}</span>
-        </>
+      {isLoading && (
+        <div className="absolute">
+          <SyncLoader color="#ffffff" size={6} margin={2} />
+        </div>
       )}
+
+      <div
+        className={`
+      h-full flex items-center justify-center gap-1
+      ${isLoading ? "invisible" : ""}
+    `}
+      >
+        {iconSrc && (
+          <img
+            src={iconSrc}
+            alt="아이콘"
+            className={`w-4 h-4 ${
+              textInvert && !active ? "filter invert" : ""
+            }`}
+          />
+        )}
+        <span className={textInvert && active ? "filter invert" : ""}>
+          {children}
+        </span>
+      </div>
     </button>
   );
 }

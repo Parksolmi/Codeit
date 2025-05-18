@@ -105,7 +105,7 @@ export default function Home() {
             <Button
               active={inputValue.trim().length > 0}
               bgColor="bg-violet-600"
-              textColor="text-white"
+              textColor="text-slate-900"
               onClick={handleAddTodo}
               iconSrc="/images/plus-icon.svg"
               isLoading={isAdding}
