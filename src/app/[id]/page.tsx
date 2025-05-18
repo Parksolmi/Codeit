@@ -63,7 +63,7 @@ export default function Detail() {
   };
 
   const handleImageSelect = async (file: File) => {
-    const isEnglishOnly = /^[a-zA-Z0-9_\-.]+$/.test(file.name);
+    const isEnglishOnly = /^[a-zA-Z0-9_\-. ]+$/.test(file.name);
     const isUnder5MB = file.size <= 5 * 1024 * 1024;
 
     if (!isEnglishOnly) {

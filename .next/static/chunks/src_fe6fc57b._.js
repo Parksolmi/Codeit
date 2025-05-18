@@ -470,7 +470,7 @@ function Detail() {
             } : prev);
     };
     const handleImageSelect = async (file)=>{
-        const isEnglishOnly = /^[a-zA-Z0-9_\-.]+$/.test(file.name);
+        const isEnglishOnly = /^[a-zA-Z0-9_\-. ]+$/.test(file.name);
         const isUnder5MB = file.size <= 5 * 1024 * 1024;
         if (!isEnglishOnly) {
             alert("파일 이름은 영어, 숫자, 언더스코어(_), 하이픈(-), 점(.)만 사용할 수 있습니다.");
