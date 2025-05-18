@@ -52,6 +52,12 @@ export default function Detail() {
     setTodoItem((prev) => (prev ? { ...prev, name: newLabel } : prev));
   };
 
+  const handleCompleted = () => {
+    setTodoItem((prev) =>
+      prev ? { ...prev, isCompleted: !prev.isCompleted } : prev
+    );
+  };
+
   const handleImageSelect = async (file: File) => {
     const isEnglishOnly = /^[a-zA-Z0-9_\-.]+$/.test(file.name);
     const isUnder5MB = file.size <= 5 * 1024 * 1024;
@@ -142,7 +148,8 @@ export default function Detail() {
         <div className="flex flex-col items-center gap-6 pt-8">
           <CheckItemDetail
             label={todoItem?.name || ""}
-            checked={todoItem?.isCompleted || false}
+            isCompleted={todoItem?.isCompleted || false}
+            handleCompleted={handleCompleted}
             onLabelChange={handleLabelChange}
           />
           <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4">

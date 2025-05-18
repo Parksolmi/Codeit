@@ -137,28 +137,29 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 ;
-function CheckItemDetail({ label, checked, onLabelChange }) {
+function CheckItemDetail({ label, isCompleted, handleCompleted, onLabelChange }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `
         w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 
-        ${checked ? "bg-violet-200" : ""}
+        ${isCompleted ? "bg-violet-200" : ""}
       `,
+        onClick: handleCompleted,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full flex justify-center items-center gap-4",
             children: [
-                checked ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                isCompleted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                     src: "/images/checked-icon.svg",
                     alt: "체크됨",
                     className: "w-7 h-7"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 27,
+                    lineNumber: 30,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -171,18 +172,18 @@ function CheckItemDetail({ label, checked, onLabelChange }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 29,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-            lineNumber: 19,
+            lineNumber: 22,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-        lineNumber: 13,
+        lineNumber: 15,
         columnNumber: 5
     }, this);
 }
@@ -437,6 +438,12 @@ function Detail() {
                 name: newLabel
             } : prev);
     };
+    const handleCompleted = ()=>{
+        setTodoItem((prev)=>prev ? {
+                ...prev,
+                isCompleted: !prev.isCompleted
+            } : prev);
+    };
     const handleImageSelect = async (file)=>{
         const isEnglishOnly = /^[a-zA-Z0-9_\-.]+$/.test(file.name);
         const isUnder5MB = file.size <= 5 * 1024 * 1024;
@@ -512,7 +519,7 @@ function Detail() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 140,
+                lineNumber: 146,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -522,11 +529,12 @@ function Detail() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Detail$2f$CheckItemDetail$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             label: todoItem?.name || "",
-                            checked: todoItem?.isCompleted || false,
+                            isCompleted: todoItem?.isCompleted || false,
+                            handleCompleted: handleCompleted,
                             onLabelChange: handleLabelChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 143,
+                            lineNumber: 149,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,12 +547,12 @@ function Detail() {
                                         onImageSelect: handleImageSelect
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -554,18 +562,18 @@ function Detail() {
                                         onChange: handleMemoChange
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 163,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 162,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 148,
+                            lineNumber: 155,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -580,7 +588,7 @@ function Detail() {
                                     children: "수정완료"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 168,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -592,24 +600,24 @@ function Detail() {
                                     children: "삭제하기"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 177,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 160,
+                            lineNumber: 167,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 142,
+                    lineNumber: 148,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 141,
+                lineNumber: 147,
                 columnNumber: 7
             }, this)
         ]
