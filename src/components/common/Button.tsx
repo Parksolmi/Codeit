@@ -8,6 +8,7 @@ interface ButtonProps {
   active?: boolean;
   iconSrc?: string;
   isAdding?: boolean;
+  textInvert?: boolean;
 }
 
 export default function Button({
@@ -18,6 +19,7 @@ export default function Button({
   active = false,
   iconSrc,
   isAdding = false,
+  textInvert = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
   const textColorClass = active ? textColor : "text-black";
@@ -43,7 +45,9 @@ export default function Button({
             <img
               src={iconSrc}
               alt="아이콘"
-              className={`w-4 h-4 ${!active ? "filter invert" : ""}`}
+              className={`w-4 h-4 ${
+                textInvert && !active ? "filter invert" : ""
+              }`}
             />
           )}
           <span>{children}</span>

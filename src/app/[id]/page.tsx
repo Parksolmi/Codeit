@@ -23,6 +23,7 @@ export default function Detail() {
   const params = useParams();
   const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID;
 
+  const [initialTodoItem, setInitialTodoItem] = useState<TodoItem | null>(null);
   const [todoItem, setTodoItem] = useState<TodoItem | null>(null);
   const [isEdited, setIsEdited] = useState(false);
 
@@ -33,6 +34,8 @@ export default function Detail() {
       );
 
       const data = response.data;
+
+      setInitialTodoItem(data);
       setTodoItem(data);
 
       console.log("data", data);
@@ -50,6 +53,21 @@ export default function Detail() {
   };
 
   const handleImageSelect = async (file: File) => {
+    const isEnglishOnly = /^[a-zA-Z0-9_\-.]+$/.test(file.name);
+    const isUnder5MB = file.size <= 5 * 1024 * 1024;
+
+    if (!isEnglishOnly) {
+      alert(
+        "파일 이름은 영어, 숫자, 언더스코어(_), 하이픈(-), 점(.)만 사용할 수 있습니다."
+      );
+      return;
+    }
+
+    if (!isUnder5MB) {
+      alert("파일 크기는 5MB 이하여야 합니다.");
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append("image", file);
@@ -66,12 +84,11 @@ export default function Detail() {
 
       const uploadedUrl = uploadResponse.data.url;
 
-      // 먼저 상태 업데이트 (UI 반영)
       setTodoItem((prev) => (prev ? { ...prev, imageUrl: uploadedUrl } : prev));
 
-      console.log("Image uploaded successfully:", uploadedUrl, todoItem);
+      console.log("Image uploaded successfully:", uploadedUrl);
     } catch (err) {
-      console.error("이미지 업로드 또는 업데이트 중 에러 발생:", err);
+      console.error("이미지 업로드 중 에러 발생:", err);
     }
   };
 
@@ -107,8 +124,16 @@ export default function Detail() {
   }, [TENANT_ID]);
 
   useEffect(() => {
-    setIsEdited(true);
-  }, [todoItem]);
+    if (!todoItem || !initialTodoItem) return;
+
+    const isChanged =
+      todoItem.name !== initialTodoItem.name ||
+      todoItem.memo !== initialTodoItem.memo ||
+      todoItem.imageUrl !== initialTodoItem.imageUrl ||
+      todoItem.isCompleted !== initialTodoItem.isCompleted;
+
+    setIsEdited(isChanged);
+  }, [todoItem, initialTodoItem]);
 
   return (
     <>
@@ -136,6 +161,7 @@ export default function Detail() {
             <Button
               iconSrc="/images/editcheck-icon.png"
               active={isEdited}
+              bgColor="bg-lime-300"
               textColor="text-slate-900"
               onClick={handleUpdateTodo}
             >

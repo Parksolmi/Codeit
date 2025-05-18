@@ -109,6 +109,7 @@ export default function Home() {
               onClick={handleAddTodo}
               iconSrc="/images/plus-icon.svg"
               isAdding={isAdding}
+              textInvert={true}
             >
               추가하기
             </Button>
