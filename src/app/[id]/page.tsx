@@ -24,6 +24,7 @@ export default function Detail() {
   const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID;
 
   const [todoItem, setTodoItem] = useState<TodoItem | null>(null);
+  const [isEdited, setIsEdited] = useState(false);
 
   const handleGetTodo = async () => {
     try {
@@ -106,7 +107,7 @@ export default function Detail() {
   }, [TENANT_ID]);
 
   useEffect(() => {
-    console.log("todoItem", todoItem);
+    setIsEdited(true);
   }, [todoItem]);
 
   return (
@@ -134,7 +135,7 @@ export default function Detail() {
           <div className="w-full flex justify-end gap-4">
             <Button
               iconSrc="/images/editcheck-icon.png"
-              active={true}
+              active={isEdited}
               textColor="text-slate-900"
               onClick={handleUpdateTodo}
             >

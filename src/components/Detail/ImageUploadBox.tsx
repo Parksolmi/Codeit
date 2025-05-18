@@ -14,21 +14,38 @@ export default function ImageUploadBox({
   };
 
   return (
-    <label className="w-full h-[250px] border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer relative">
+    <label className="w-full h-[250px] bg-slate-50 flex flex-col items-center justify-center gap-4 cursor-pointer relative">
       {imageUrl ? (
-        <img
-          src={"imageUrl"}
-          alt="Uploaded"
-          className="w-full h-full object-cover"
-        />
+        <>
+          <img
+            src={imageUrl}
+            alt="Uploaded"
+            className="w-full h-full object-cover rounded-2xl border-none"
+          />
+          <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-[#0F172A]/50 border-2 border-[#0F172A] flex items-center justify-center">
+            <img src="/images/edit.png" alt="수정" className="w-4 h-4" />
+          </div>
+        </>
       ) : (
-        <img src="/images/upload-img.png" alt="Upload" className="w-12 h-12" />
+        <>
+          <div className="border-2 border-dashed rounded-2xl w-full h-full flex items-center justify-center">
+            <img
+              src="/images/upload-img.png"
+              alt="Upload"
+              className="w-12 h-12"
+            />
+          </div>
+          <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
+            <img
+              src="/images/plus-slate-icon.png"
+              alt="추가"
+              className="w-4 h-4"
+            />
+          </div>
+        </>
       )}
-      <input type="file" className="hidden" onChange={handleChange} />
 
-      <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
-        <img src="/images/plus-slate-icon.png" alt="추가" className="w-4 h-4" />
-      </div>
+      <input type="file" className="hidden" onChange={handleChange} />
     </label>
   );
 }

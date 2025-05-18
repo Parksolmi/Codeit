@@ -570,6 +570,11 @@ img, video {
   border-color: #0000;
 }
 
+.border-\[\#0F172A\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 23 42 / var(--tw-border-opacity, 1));
+}
+
 .border-b-slate-200 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
@@ -637,6 +642,10 @@ img, video {
 .bg-lime-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(190 242 100 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#0F172A\]\/50 {
+  background-color: #0f172a80;
 }
 
 .bg-\[repeating-linear-gradient\(to_bottom\,transparent\,transparent_23px\,\#fcd34d_24px\)\] {
