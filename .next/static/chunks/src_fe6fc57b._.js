@@ -155,15 +155,28 @@ __turbopack_context__.s({
     "default": (()=>CheckItemDetail)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 ;
 function CheckItemDetail({ label, isCompleted, handleCompleted, onLabelChange }) {
+    _s();
+    const spanRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [inputWidth, setInputWidth] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("1ch");
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CheckItemDetail.useEffect": ()=>{
+            if (spanRef.current) {
+                const width = spanRef.current.offsetWidth;
+                setInputWidth(`${width + 8}px`);
+            }
+        }
+    }["CheckItemDetail.useEffect"], [
+        label
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `
-        w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 
-        ${isCompleted ? "bg-violet-200" : ""}
-      `,
+        className: `w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 ${isCompleted ? "bg-violet-200" : ""}`,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "w-full flex justify-center items-center gap-4",
+            className: "flex justify-center items-center gap-4 min-w-0",
             children: [
                 isCompleted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                     src: "/images/checked-icon.svg",
@@ -172,41 +185,55 @@ function CheckItemDetail({ label, isCompleted, handleCompleted, onLabelChange })
                     onClick: handleCompleted
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 23,
+                    lineNumber: 34,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     onClick: handleCompleted,
                     className: "w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 30,
+                    lineNumber: 41,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                     type: "text",
                     value: label,
                     onChange: (e)=>onLabelChange(e.target.value),
-                    className: "bg-transparent border-none outline-none  text-sm text-black underline",
+                    className: "bg-transparent border-none outline-none text-sm text-black underline w-fit",
                     style: {
-                        width: `${label.length || 1}ch`
+                        width: inputWidth
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-                    lineNumber: 35,
+                    lineNumber: 47,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    ref: spanRef,
+                    className: "absolute opacity-0 whitespace-pre text-sm font-normal",
+                    style: {
+                        pointerEvents: "none",
+                        visibility: "hidden"
+                    },
+                    children: label || " "
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
+                    lineNumber: 55,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-            lineNumber: 21,
+            lineNumber: 32,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Detail/CheckItemDetail.tsx",
-        lineNumber: 15,
+        lineNumber: 27,
         columnNumber: 5
     }, this);
 }
+_s(CheckItemDetail, "RsVxoW9SimfEIue+ZCFyRpnN3Vo=");
 _c = CheckItemDetail;
 var _c;
 __turbopack_context__.k.register(_c, "CheckItemDetail");

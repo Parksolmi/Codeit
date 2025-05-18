@@ -558,8 +558,20 @@ img, video {
   width: 75px;
 }
 
+.w-auto {
+  width: auto;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
 .min-w-\[120px\] {
   min-width: 120px;
+}
+
+.min-w-0 {
+  min-width: 0;
 }
 
 .max-w-\[1000px\] {
@@ -636,6 +648,10 @@ img, video {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
 }
 
 .rounded-2xl {
@@ -871,6 +887,10 @@ img, video {
   font-weight: 600;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .leading-\[24px\] {
   line-height: 24px;
 }
@@ -933,6 +953,10 @@ img, video {
 
 .opacity-40 {
   opacity: .4;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow-\[2px_2px_0px_0px_\#0F172A\] {
