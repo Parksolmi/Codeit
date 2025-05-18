@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   active?: boolean;
   iconSrc?: string;
-  isAdding?: boolean;
+  isLoading?: boolean;
   textInvert?: boolean;
 }
 
@@ -18,7 +18,7 @@ export default function Button({
   onClick,
   active = false,
   iconSrc,
-  isAdding = false,
+  isLoading = false,
   textInvert = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
@@ -37,7 +37,7 @@ export default function Button({
         whitespace-nowrap
       `}
     >
-      {isAdding ? (
+      {isLoading ? (
         <SyncLoader color="#ffffff" size={6} margin={2} />
       ) : (
         <>

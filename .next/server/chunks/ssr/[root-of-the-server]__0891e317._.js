@@ -20,7 +20,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__ = __turbopack_context__.i("[project]/node_modules/react-spinners/esm/SyncLoader.js [app-ssr] (ecmascript) <export default as SyncLoader>");
 ;
 ;
-function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", onClick, active = false, iconSrc, isAdding = false, textInvert = false }) {
+function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", onClick, active = false, iconSrc, isLoading = false, textInvert = false }) {
     const resolvedBgColor = active ? bgColor : "bg-slate-200";
     const textColorClass = active ? textColor : "text-black";
     const paddingClass = children ? "px-10 py-0" : "";
@@ -34,7 +34,7 @@ function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", 
         ${paddingClass}
         whitespace-nowrap
       `,
-        children: isAdding ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__["SyncLoader"], {
+        children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__["SyncLoader"], {
             color: "#ffffff",
             size: 6,
             margin: 2
@@ -571,7 +571,7 @@ function Home() {
                                     textColor: "text-white",
                                     onClick: handleAddTodo,
                                     iconSrc: "/images/plus-icon.svg",
-                                    isAdding: isAdding,
+                                    isLoading: isAdding,
                                     textInvert: true,
                                     children: "추가하기"
                                 }, void 0, false, {

@@ -12,7 +12,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__ = __turbopack_context__.i("[project]/node_modules/react-spinners/esm/SyncLoader.js [app-client] (ecmascript) <export default as SyncLoader>");
 ;
 ;
-function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", onClick, active = false, iconSrc, isAdding = false, textInvert = false }) {
+function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", onClick, active = false, iconSrc, isLoading = false, textInvert = false }) {
     const resolvedBgColor = active ? bgColor : "bg-slate-200";
     const textColorClass = active ? textColor : "text-black";
     const paddingClass = children ? "px-10 py-0" : "";
@@ -26,7 +26,7 @@ function Button({ children, bgColor = "bg-slate-200", textColor = "text-black", 
         ${paddingClass}
         whitespace-nowrap
       `,
-        children: isAdding ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__["SyncLoader"], {
+        children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__["SyncLoader"], {
             color: "#ffffff",
             size: 6,
             margin: 2
@@ -397,9 +397,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Detail$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/utils/axios.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__ = __turbopack_context__.i("[project]/node_modules/react-spinners/esm/SyncLoader.js [app-client] (ecmascript) <export default as SyncLoader>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -412,15 +414,19 @@ function Detail() {
     _s();
     const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
     const TENANT_ID = ("TURBOPACK compile-time value", "paka36");
+    const [isFetched, setIsFetched] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [initialTodoItem, setInitialTodoItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [todoItem, setTodoItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isEdited, setIsEdited] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isEditing, setIsEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isDeleting, setIsDeleting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const handleGetTodo = async ()=>{
         try {
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`/api/${TENANT_ID}/items/${params.id}`);
             const data = response.data;
             setInitialTodoItem(data);
             setTodoItem(data);
+            setIsFetched(true);
             console.log("data", data);
         } catch (err) {
             console.error("에러 발생:", err);
@@ -475,6 +481,8 @@ function Detail() {
     };
     const handleUpdateTodo = async ()=>{
         if (!todoItem) return;
+        else if (isEditing) return;
+        setIsEditing(true);
         try {
             await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].patch(`/api/${TENANT_ID}/items/${todoItem.id}`, {
                 name: todoItem.name ?? "",
@@ -484,10 +492,16 @@ function Detail() {
             });
         } catch (err) {
             console.error("에러 발생:", err);
+        } finally{
+            setIsEditing(false);
+            alert("수정되었습니다.");
+            window.location.href = "/";
         }
     };
     const handleDeleteTodo = async ()=>{
         if (!todoItem) return;
+        else if (isDeleting) return;
+        setIsDeleting(true);
         try {
             const confirm = window.confirm("정말 삭제하시겠습니까?");
             if (!confirm) return;
@@ -496,6 +510,8 @@ function Detail() {
             window.location.href = "/";
         } catch (err) {
             console.error("에러 발생:", err);
+        } finally{
+            setIsDeleting(false);
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -519,12 +535,25 @@ function Detail() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 146,
+                lineNumber: 162,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "w-full max-w-[1000px] min-h-screen bg-white px-4 mx-auto ",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: !isFetched ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex justify-center items-center w-full h-40",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$SyncLoader$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SyncLoader$3e$__["SyncLoader"], {
+                        color: "#7C3AED"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/[id]/page.tsx",
+                        lineNumber: 166,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/app/[id]/page.tsx",
+                    lineNumber: 165,
+                    columnNumber: 11
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col items-center gap-6 pt-8",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Detail$2f$CheckItemDetail$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -534,8 +563,8 @@ function Detail() {
                             onLabelChange: handleLabelChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 149,
-                            columnNumber: 11
+                            lineNumber: 170,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-full flex flex-col md:flex-row justify-center items-center gap-4",
@@ -547,13 +576,13 @@ function Detail() {
                                         onImageSelect: handleImageSelect
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 157,
-                                        columnNumber: 15
+                                        lineNumber: 178,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 156,
-                                    columnNumber: 13
+                                    lineNumber: 177,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "w-full md:flex-[2]",
@@ -562,19 +591,19 @@ function Detail() {
                                         onChange: handleMemoChange
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 163,
-                                        columnNumber: 15
+                                        lineNumber: 184,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 162,
-                                    columnNumber: 13
+                                    lineNumber: 183,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 155,
-                            columnNumber: 11
+                            lineNumber: 176,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-full flex justify-end gap-4",
@@ -584,46 +613,48 @@ function Detail() {
                                     active: isEdited,
                                     bgColor: "bg-lime-300",
                                     textColor: "text-slate-900",
+                                    isLoading: isEditing,
                                     onClick: handleUpdateTodo,
                                     children: "수정완료"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 168,
-                                    columnNumber: 13
+                                    lineNumber: 192,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     iconSrc: "/images/x-icon.png",
                                     onClick: handleDeleteTodo,
                                     bgColor: "bg-rose-500",
                                     textColor: "text-white",
+                                    isLoading: isDeleting,
                                     active: true,
                                     children: "삭제하기"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 177,
-                                    columnNumber: 13
+                                    lineNumber: 202,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 167,
-                            columnNumber: 11
+                            lineNumber: 191,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 148,
-                    columnNumber: 9
+                    lineNumber: 169,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 147,
+                lineNumber: 163,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(Detail, "RkK4IqYkwrAoYyGWuLOXtt1MafI=", false, function() {
+_s(Detail, "hLDiHCY3iVrmePCelgMZNnBVPz4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
     ];

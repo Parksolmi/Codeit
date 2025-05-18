@@ -108,7 +108,7 @@ export default function Home() {
               textColor="text-white"
               onClick={handleAddTodo}
               iconSrc="/images/plus-icon.svg"
-              isAdding={isAdding}
+              isLoading={isAdding}
               textInvert={true}
             >
               추가하기
