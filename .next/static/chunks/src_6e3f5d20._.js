@@ -416,19 +416,27 @@ function Home() {
             setIsAdding(false);
         }
     };
-    const handleGetTodos = async ()=>{
-        try {
-            const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`/api/${TENANT_ID}/items`);
-            const data = response.data;
-            const todos = data.filter((item)=>!item.isCompleted);
-            const dones = data.filter((item)=>item.isCompleted);
-            setTodoItems(todos);
-            setDoneItems(dones);
-            setIsFetched(true);
-        } catch (err) {
-            console.error("에러 발생:", err);
+    const handleGetTodos = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Home.useCallback[handleGetTodos]": async ()=>{
+            try {
+                const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`/api/${TENANT_ID}/items`);
+                const data = response.data;
+                const todos = data.filter({
+                    "Home.useCallback[handleGetTodos].todos": (item)=>!item.isCompleted
+                }["Home.useCallback[handleGetTodos].todos"]);
+                const dones = data.filter({
+                    "Home.useCallback[handleGetTodos].dones": (item)=>item.isCompleted
+                }["Home.useCallback[handleGetTodos].dones"]);
+                setTodoItems(todos);
+                setDoneItems(dones);
+                setIsFetched(true);
+            } catch (err) {
+                console.error("에러 발생:", err);
+            }
         }
-    };
+    }["Home.useCallback[handleGetTodos]"], [
+        TENANT_ID
+    ]);
     const handleToggle = async (itemId, currentCompleted)=>{
         setTogglingId(itemId);
         try {
@@ -622,7 +630,7 @@ function Home() {
         ]
     }, void 0, true);
 }
-_s(Home, "pQnvDpqOBwJflK7xieogYJVGEis=");
+_s(Home, "OkRwAUq1yX0gKtElZe4xbYtHOF4=");
 _c = Home;
 var _c;
 __turbopack_context__.k.register(_c, "Home");

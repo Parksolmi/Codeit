@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Button from "@/components/common/Button";
 import Header from "@/components/common/Header";
 import Input from "@/components/common/Input";
@@ -46,7 +46,7 @@ export default function Home() {
     }
   };
 
-  const handleGetTodos = async () => {
+  const handleGetTodos = useCallback(async () => {
     try {
       const response = await instance.get<TodoItem[]>(
         `/api/${TENANT_ID}/items`
@@ -62,7 +62,7 @@ export default function Home() {
     } catch (err) {
       console.error("에러 발생:", err);
     }
-  };
+  }, [TENANT_ID]);
 
   const handleToggle = async (itemId: number, currentCompleted: boolean) => {
     setTogglingId(itemId);
