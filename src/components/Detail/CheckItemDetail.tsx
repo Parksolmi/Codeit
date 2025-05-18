@@ -48,7 +48,7 @@ export default function CheckItemDetail({
           type="text"
           value={label}
           onChange={(e) => onLabelChange(e.target.value)}
-          className="bg-transparent border-none outline-none text-sm text-black underline w-fit"
+          className="bg-transparent border-none outline-none text-sm font-medium text-black underline w-fit"
           style={{ width: inputWidth }}
         />
 

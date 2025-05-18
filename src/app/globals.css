@@ -2,7 +2,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import "tailwindcss"; */
+
+/* font-light */
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeoTTF-aLt.woff") format("woff");
+  font-weight: 300;
+}
+
+/* font-normal */
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeoTTF-bRg.woff") format("woff");
+  font-weight: 400;
+}
+
+/* font-medium */
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeoTTF-cBd.woff") format("woff");
+  font-weight: 500;
+}
+
+/* font-semibold */
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeoTTF-dEb.woff") format("woff");
+  font-weight: 600;
+}
+
+/* font-bold */
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeoTTF-eHv.woff") format("woff");
+  font-weight: 700;
+}
 
 /* 사용자 스타일 */
 :root {

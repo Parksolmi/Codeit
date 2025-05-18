@@ -30,7 +30,7 @@ export default function Button({
       className={`
         h-[48px]
         min-w-[120px]
-        rounded-full font-semibold text-sm 
+        rounded-full font-medium text-sm 
         ${resolvedBgColor} ${textColor} border-2 border-slate-900
         flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_#0F172A]
         ${paddingClass}

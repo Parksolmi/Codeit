@@ -55,7 +55,7 @@ export default function CheckItem({
 
       <div
         onClick={() => router.push(`/${id}`)}
-        className={`w-full text-sm text-slate-800 cursor-pointer ${
+        className={`w-full text-sm font-normal text-slate-800 cursor-pointer ${
           checked ? "line-through" : ""
         }`}
       >

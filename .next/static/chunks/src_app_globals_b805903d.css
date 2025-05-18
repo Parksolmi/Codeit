@@ -675,7 +675,7 @@ img, video {
 }
 
 .font-nanum {
-  font-family: NanumSquare, sans-serif;
+  font-family: NanumSquareNeo, sans-serif;
 }
 
 .text-sm {
@@ -697,6 +697,10 @@ img, video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .text-amber-800 {
@@ -777,20 +781,32 @@ img, video {
 }
 
 @font-face {
-  font-family: NanumSquare;
-  src: url("/fonts/NanumSquareL.woff") format("woff");
+  font-family: NanumSquareNeo;
+  src: url("/fonts/NanumSquareNeoTTF-aLt.woff") format("woff");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: NanumSquare;
-  src: url("/fonts/NanumSquareR.woff") format("woff");
+  font-family: NanumSquareNeo;
+  src: url("/fonts/NanumSquareNeoTTF-bRg.woff") format("woff");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: NanumSquare;
-  src: url("/fonts/NanumSquareB.woff") format("woff");
+  font-family: NanumSquareNeo;
+  src: url("/fonts/NanumSquareNeoTTF-cBd.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: NanumSquareNeo;
+  src: url("/fonts/NanumSquareNeoTTF-dEb.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: NanumSquareNeo;
+  src: url("/fonts/NanumSquareNeoTTF-eHv.woff") format("woff");
   font-weight: 700;
 }
 
@@ -840,4 +856,5 @@ body {
   }
 }
 
-/*# sourceMappingURL=src_app_globals_css_f9ee138c._.single.css.map*/
+
+/*# sourceMappingURL=src_app_globals_b805903d.css.map*/

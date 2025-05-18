@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nanum: ["NanumSquareNeo", "sans-serif"],
+      },
       colors: {
         slate: {
           900: "#0F172A",
