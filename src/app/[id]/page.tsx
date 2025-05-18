@@ -29,6 +29,7 @@ export default function Detail() {
   const [isEdited, setIsEdited] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isImgUploading, setIsImgUploading] = useState(false);
 
   const handleGetTodo = async () => {
     try {
@@ -63,6 +64,10 @@ export default function Detail() {
   };
 
   const handleImageSelect = async (file: File) => {
+    if (!file) return;
+    else if (isImgUploading) return;
+
+    setIsImgUploading(true);
     const isEnglishOnly = /^[a-zA-Z0-9_\-. ]+$/.test(file.name);
     const isUnder5MB = file.size <= 5 * 1024 * 1024;
 
@@ -99,6 +104,8 @@ export default function Detail() {
       console.log("Image uploaded successfully:", uploadedUrl);
     } catch (err) {
       console.error("이미지 업로드 중 에러 발생:", err);
+    } finally {
+      setIsImgUploading(false);
     }
   };
 
@@ -177,6 +184,7 @@ export default function Detail() {
               <div className="w-full md:flex-1">
                 <ImageUploadBox
                   imageUrl={todoItem?.imageUrl}
+                  isUploading={isImgUploading}
                   onImageSelect={handleImageSelect}
                 />
               </div>

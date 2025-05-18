@@ -1,10 +1,14 @@
+import { ClipLoader } from "react-spinners";
+
 interface ImageUploadBoxProps {
   imageUrl: string | null | undefined;
+  isUploading?: boolean;
   onImageSelect: (file: File) => void;
 }
 
 export default function ImageUploadBox({
   imageUrl,
+  isUploading = false,
   onImageSelect,
 }: ImageUploadBoxProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +47,12 @@ export default function ImageUploadBox({
             />
           </div>
         </>
+      )}
+
+      {isUploading && (
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-2xl z-10">
+          <ClipLoader color="#ffffff" size={32} />
+        </div>
       )}
 
       <input type="file" className="hidden" onChange={handleChange} />

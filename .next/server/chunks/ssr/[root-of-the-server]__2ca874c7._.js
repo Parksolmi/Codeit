@@ -212,8 +212,10 @@ __turbopack_context__.s({
     "default": (()=>ImageUploadBox)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$ClipLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipLoader$3e$__ = __turbopack_context__.i("[project]/node_modules/react-spinners/esm/ClipLoader.js [app-ssr] (ecmascript) <export default as ClipLoader>");
 ;
-function ImageUploadBox({ imageUrl, onImageSelect }) {
+;
+function ImageUploadBox({ imageUrl, isUploading = false, onImageSelect }) {
     const handleChange = (e)=>{
         if (e.target.files && e.target.files[0]) {
             onImageSelect(e.target.files[0]);
@@ -230,7 +232,7 @@ function ImageUploadBox({ imageUrl, onImageSelect }) {
                         className: "w-full h-full object-cover rounded-2xl border-none"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                        lineNumber: 20,
+                        lineNumber: 24,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -241,12 +243,12 @@ function ImageUploadBox({ imageUrl, onImageSelect }) {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                            lineNumber: 26,
+                            lineNumber: 30,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                        lineNumber: 25,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, this)
                 ]
@@ -260,12 +262,12 @@ function ImageUploadBox({ imageUrl, onImageSelect }) {
                             className: "w-12 h-12"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                            lineNumber: 32,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                        lineNumber: 31,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -276,29 +278,44 @@ function ImageUploadBox({ imageUrl, onImageSelect }) {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                            lineNumber: 39,
+                            lineNumber: 43,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                        lineNumber: 38,
+                        lineNumber: 42,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true),
+            isUploading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-black/30 flex items-center justify-center rounded-2xl z-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$spinners$2f$esm$2f$ClipLoader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipLoader$3e$__["ClipLoader"], {
+                    color: "#ffffff",
+                    size: 32
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
+                    lineNumber: 54,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
+                lineNumber: 53,
+                columnNumber: 9
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                 type: "file",
                 className: "hidden",
                 onChange: handleChange
             }, void 0, false, {
                 fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-                lineNumber: 48,
+                lineNumber: 58,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Detail/ImageUploadBox.tsx",
-        lineNumber: 17,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }
@@ -538,6 +555,7 @@ function Detail() {
     const [isEdited, setIsEdited] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isEditing, setIsEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isDeleting, setIsDeleting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isImgUploading, setIsImgUploading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const handleGetTodo = async ()=>{
         try {
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get(`/api/${TENANT_ID}/items/${params.id}`);
@@ -569,6 +587,9 @@ function Detail() {
             } : prev);
     };
     const handleImageSelect = async (file)=>{
+        if (!file) return;
+        else if (isImgUploading) return;
+        setIsImgUploading(true);
         const isEnglishOnly = /^[a-zA-Z0-9_\-. ]+$/.test(file.name);
         const isUnder5MB = file.size <= 5 * 1024 * 1024;
         if (!isEnglishOnly) {
@@ -595,6 +616,8 @@ function Detail() {
             console.log("Image uploaded successfully:", uploadedUrl);
         } catch (err) {
             console.error("이미지 업로드 중 에러 발생:", err);
+        } finally{
+            setIsImgUploading(false);
         }
     };
     const handleUpdateTodo = async ()=>{
@@ -649,7 +672,7 @@ function Detail() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 162,
+                lineNumber: 169,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -660,12 +683,12 @@ function Detail() {
                         color: "#7C3AED"
                     }, void 0, false, {
                         fileName: "[project]/src/app/[id]/page.tsx",
-                        lineNumber: 166,
+                        lineNumber: 173,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 165,
+                    lineNumber: 172,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col items-center gap-6 pt-8",
@@ -677,7 +700,7 @@ function Detail() {
                             onLabelChange: handleLabelChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 170,
+                            lineNumber: 177,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -687,15 +710,16 @@ function Detail() {
                                     className: "w-full md:flex-1",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Detail$2f$ImageUploadBox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         imageUrl: todoItem?.imageUrl,
+                                        isUploading: isImgUploading,
                                         onImageSelect: handleImageSelect
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 185,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 184,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -705,18 +729,18 @@ function Detail() {
                                         onChange: handleMemoChange
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/[id]/page.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 192,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 183,
+                                    lineNumber: 191,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 176,
+                            lineNumber: 183,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,7 +756,7 @@ function Detail() {
                                     children: "수정완료"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 200,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$common$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -745,24 +769,24 @@ function Detail() {
                                     children: "삭제하기"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/[id]/page.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/[id]/page.tsx",
-                            lineNumber: 191,
+                            lineNumber: 199,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/[id]/page.tsx",
-                    lineNumber: 169,
+                    lineNumber: 176,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/[id]/page.tsx",
-                lineNumber: 163,
+                lineNumber: 170,
                 columnNumber: 7
             }, this)
         ]

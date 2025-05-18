@@ -287,6 +287,10 @@ img, video {
   right: .5rem;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -658,6 +662,10 @@ img, video {
 
 .bg-\[\#0F172A\]\/50 {
   background-color: #0f172a80;
+}
+
+.bg-black\/30 {
+  background-color: #0000004d;
 }
 
 .bg-\[repeating-linear-gradient\(to_bottom\,transparent\,transparent_23px\,\#fcd34d_24px\)\] {
