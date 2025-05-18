@@ -17,7 +17,6 @@ export default function CheckItemDetail({
         w-full flex justify-center items-center border-2 border-black rounded-[20px] py-3 px-4 
         ${isCompleted ? "bg-violet-200" : ""}
       `}
-      onClick={handleCompleted}
     >
       <div className="w-full flex justify-center items-center gap-4">
         {isCompleted ? (
@@ -25,15 +24,20 @@ export default function CheckItemDetail({
             src="/images/checked-icon.svg"
             alt="체크됨"
             className="w-7 h-7"
+            onClick={handleCompleted}
           />
         ) : (
-          <div className="w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black" />
+          <div
+            onClick={handleCompleted}
+            className="w-7 h-7 rounded-full border-2 shrink-0 bg-[#FEFCE8] border-black"
+          />
         )}
         <input
           type="text"
           value={label}
           onChange={(e) => onLabelChange(e.target.value)}
-          className="bg-transparent border-none outline-none text-sm text-black underline"
+          className="bg-transparent border-none outline-none 
+          text-sm text-black underline"
           style={{ width: `${label.length || 1}ch` }}
         />
       </div>
