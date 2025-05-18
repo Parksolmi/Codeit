@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SyncLoader } from "react-spinners";
 
 interface ButtonProps {
@@ -50,9 +51,11 @@ export default function Button({
     `}
       >
         {iconSrc && (
-          <img
+          <Image
             src={iconSrc}
             alt="아이콘"
+            width={16}
+            height={16}
             className={`w-4 h-4 ${
               textInvert && !active ? "filter invert" : ""
             }`}

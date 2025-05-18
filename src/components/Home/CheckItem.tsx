@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ClipLoader } from "react-spinners";
+import Image from "next/image";
 
 interface CheckItemProps {
   id: number;
@@ -45,8 +46,10 @@ export default function CheckItem({
         {isLoading ? (
           <ClipLoader color="#F43F5E" size={16} />
         ) : checked ? (
-          <img
+          <Image
             src="/images/checked-icon.svg"
+            width={16}
+            height={16}
             alt="체크됨"
             className="w-7 h-7"
           />

@@ -7,7 +7,7 @@ import ImageUploadBox from "@/components/Detail/ImageUploadBox";
 import Memo from "@/components/Detail/Memo";
 import instance from "@/utils/axios";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
 import { useRouter } from "next/navigation";
 
@@ -33,7 +33,7 @@ export default function Detail() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isImgUploading, setIsImgUploading] = useState(false);
 
-  const handleGetTodo = async () => {
+  const handleGetTodo = useCallback(async () => {
     try {
       const response = await instance.get<TodoItem>(
         `/api/${TENANT_ID}/items/${params.id}`
@@ -49,7 +49,7 @@ export default function Detail() {
     } catch (err) {
       console.error("에러 발생:", err);
     }
-  };
+  }, [TENANT_ID, params.id]);
 
   const handleMemoChange = (newMemo: string) => {
     setTodoItem((prev) => (prev ? { ...prev, memo: newMemo } : prev));
@@ -152,7 +152,7 @@ export default function Detail() {
 
   useEffect(() => {
     handleGetTodo();
-  }, [TENANT_ID]);
+  }, [handleGetTodo]);
 
   useEffect(() => {
     if (!todoItem || !initialTodoItem) return;

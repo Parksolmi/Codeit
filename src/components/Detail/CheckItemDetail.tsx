@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface CheckItemDetailProps {
   label: string;
@@ -31,8 +32,10 @@ export default function CheckItemDetail({
     >
       <div className="flex justify-center items-center gap-4 min-w-0">
         {isCompleted ? (
-          <img
+          <Image
             src="/images/checked-icon.svg"
+            width={16}
+            height={16}
             alt="체크됨"
             className="w-7 h-7"
             onClick={handleCompleted}

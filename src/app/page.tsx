@@ -53,8 +53,8 @@ export default function Home() {
       );
       const data = response.data;
 
-      const todos = data.filter((item: any) => !item.isCompleted);
-      const dones = data.filter((item: any) => item.isCompleted);
+      const todos = data.filter((item: TodoItem) => !item.isCompleted);
+      const dones = data.filter((item: TodoItem) => item.isCompleted);
 
       setTodoItems(todos);
       setDoneItems(dones);
@@ -93,7 +93,7 @@ export default function Home() {
 
   useEffect(() => {
     handleGetTodos();
-  }, [TENANT_ID]);
+  }, [handleGetTodos]);
 
   return (
     <>
@@ -128,7 +128,7 @@ export default function Home() {
                     <p>TODO를 새롭게 추가해주세요!</p>
                   </>
                 ) : (
-                  todoItems.map((item: any) => (
+                  todoItems.map((item: TodoItem) => (
                     <CheckItem
                       id={item.id}
                       key={item.id}
@@ -147,7 +147,7 @@ export default function Home() {
                     <p>해야 할 일을 체크해보세요!</p>
                   </>
                 ) : (
-                  doneItems.map((item: any) => (
+                  doneItems.map((item: TodoItem) => (
                     <CheckItem
                       id={item.id}
                       key={item.id}

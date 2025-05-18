@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface TaskSectionProps {
   type: "todo" | "done";
   isEmpty: boolean;
@@ -16,16 +18,20 @@ export default function TaskSection({
 
   return (
     <div className="relative w-full md:w-1/2 h-full flex flex-col items-start gap-4">
-      <img
+      <Image
         src={labelImageSrc}
+        width={80}
+        height={80}
         alt={`${type} label`}
         className="absolute top-0 left-0 w-[80px]"
       />
 
       {isEmpty ? (
         <div className="flex flex-col items-center justify-center text-center w-full mt-16">
-          <img
+          <Image
             src={imageSrc}
+            width={160}
+            height={160}
             alt={`${type} illustration`}
             className="w-40 mb-4"
           />
