@@ -220,7 +220,7 @@ export default function Detail() {
               </div>
             </div>
 
-            <div className="w-full flex justify-end gap-4">
+            <div className="w-full flex justify-end gap-4 pb-2">
               <Button
                 iconSrc="/images/editcheck-icon.png"
                 active={isEdited}
