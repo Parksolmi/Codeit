@@ -27,6 +27,7 @@ interface ButtonProps {
   iconSrc?: string;
   isLoading?: boolean;
   textInvert?: boolean;
+  showTextOnMobile?: boolean;
 }
 
 export default function Button({
@@ -39,9 +40,14 @@ export default function Button({
   iconSrc,
   isLoading = false,
   textInvert = false,
+  showTextOnMobile = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
-  const paddingClass = children ? "px-0 sm:px-10 py-0" : "";
+  const paddingClass = children
+    ? showTextOnMobile
+      ? "px-10 py-0"
+      : "px-0 sm:px-10 py-0"
+    : "";
 
   return (
     <button
@@ -82,7 +88,7 @@ export default function Button({
         <span
           className={`
             ${textInvert && active ? "filter invert" : ""}
-            hidden sm:inline
+            ${showTextOnMobile ? "inline" : "hidden sm:inline"}
           `}
         >
           {children}

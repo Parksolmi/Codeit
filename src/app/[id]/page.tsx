@@ -228,6 +228,7 @@ export default function Detail() {
                 textColor="text-slate-900"
                 isLoading={isEditing}
                 onClick={handleUpdateTodo}
+                showTextOnMobile={true}
               >
                 수정완료
               </Button>
@@ -238,6 +239,7 @@ export default function Detail() {
                 textColor="text-white"
                 isLoading={isDeleting}
                 active={true}
+                showTextOnMobile={true}
               >
                 삭제하기
               </Button>
