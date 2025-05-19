@@ -12,6 +12,7 @@
 * @param iconSrc 아이콘 이미지 경로 (왼쪽 아이콘으로 렌더링됨)
 * @param isLoading 로딩 중 여부 (로딩 스피너 표시 및 내용 비가시화)
 * @param textInvert true일 경우 텍스트/아이콘에 filter invert 적용 (주로 어두운 배경에 사용)
+* @param showTextOnMobile 모바일 화면에서도 텍스트를 표시할지 여부 (기본값: false)
 */
 
 import Image from "next/image";
