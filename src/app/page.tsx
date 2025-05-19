@@ -101,7 +101,11 @@ export default function Home() {
       <main className="flex justify-center">
         <div className="w-full flex flex-col">
           <div className="flex justify-center flex-row items-center gap-4 mt-6 w-full max-w-[1000px] px-4 mx-auto">
-            <Input value={inputValue} onChange={setInputValue} />
+            <Input
+              value={inputValue}
+              placeholder={"할 일을 입력해주세요"}
+              onChange={setInputValue}
+            />
             <Button
               active={inputValue.trim().length > 0}
               bgColor="bg-violet-600"

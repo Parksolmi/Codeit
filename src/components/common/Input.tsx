@@ -1,15 +1,16 @@
 interface InputProps {
   value: string;
+  placeholder?: string;
   onChange: (value: string) => void;
 }
 
-export default function Input({ value, onChange }: InputProps) {
+export default function Input({ value, onChange, placeholder }: InputProps) {
   return (
     <input
       type="text"
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      placeholder="할 일을 입력해주세요"
+      placeholder={placeholder}
       className={`
         w-full h-[48px] px-6 text-sm
         rounded-full border-2 border-slate-900
