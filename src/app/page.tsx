@@ -34,7 +34,6 @@ interface TodoItem {
 }
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
   const [doneItems, setDoneItems] = useState<TodoItem[]>([]);
 
