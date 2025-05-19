@@ -41,16 +41,15 @@ export default function Button({
   textInvert = false,
 }: ButtonProps) {
   const resolvedBgColor = active ? bgColor : "bg-slate-200";
-  const paddingClass = children ? "px-10 py-0" : "";
+  const paddingClass = children ? "px-0 sm:px-10 py-0" : "";
 
   return (
     <button
       type={type}
       onClick={onClick}
       className={`
-        h-[48px]
-        min-w-[120px]
-        rounded-full font-medium text-sm 
+        h-[48px] min-w-[60px] sm:min-w-[120px]
+        rounded-full font-medium text-sm
         ${resolvedBgColor} ${textColor} border-2 border-slate-900
         flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_#0F172A]
         ${paddingClass}
@@ -65,9 +64,9 @@ export default function Button({
 
       <div
         className={`
-      h-full flex items-center justify-center gap-1
-      ${isLoading ? "invisible" : ""}
-    `}
+          h-full flex items-center justify-center gap-1
+          ${isLoading ? "invisible" : ""}
+        `}
       >
         {iconSrc && (
           <Image
@@ -80,7 +79,12 @@ export default function Button({
             }`}
           />
         )}
-        <span className={textInvert && active ? "filter invert" : ""}>
+        <span
+          className={`
+            ${textInvert && active ? "filter invert" : ""}
+            hidden sm:inline
+          `}
+        >
           {children}
         </span>
       </div>
