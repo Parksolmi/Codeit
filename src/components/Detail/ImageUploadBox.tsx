@@ -42,7 +42,13 @@ export default function ImageUploadBox({
             className="w-full h-full object-cover rounded-2xl border-none"
           />
           <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-[#0F172A]/50 border-2 border-[#0F172A] flex items-center justify-center">
-            <Image src="/images/edit.png" alt="수정" className="w-4 h-4" />
+            <Image
+              width={16}
+              height={16}
+              src="/images/edit.png"
+              alt="수정"
+              className="w-4 h-4"
+            />
           </div>
         </>
       ) : (
