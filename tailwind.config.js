@@ -1,3 +1,10 @@
+/**
+ * Tailwind CSS 설정 파일
+ *
+ * - 프로젝트의 전역 스타일 구성 및 커스터마이징을 정의
+ * - 폰트, 색상 팔레트, 파일 경로 지정 등을 포함
+ */
+
 module.exports = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx}",

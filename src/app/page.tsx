@@ -1,9 +1,26 @@
+/**
+ * Home 페이지 컴포넌트
+ *
+ * - 할 일(Todo)과 완료된 항목(Done)을 구분하여 보여주는 메인 페이지
+ * - 새로운 할 일을 추가하거나, 기존 할 일의 완료 상태를 토글할 수 있음
+ * - 항목 목록은 서버에서 비동기로 불러오며, 로딩 상태를 스피너로 표시
+ *
+ * 주요 기능:
+ * - GET `/api/{TENANT_ID}/items` : 전체 할 일 목록 불러오기
+ * - POST `/api/{TENANT_ID}/items` : 새 할 일 추가
+ * - PATCH `/api/{TENANT_ID}/items/:id` : 할 일 완료 여부 토글
+ *
+ * 사용 컴포넌트:
+ * - Header: 상단 네비게이션 바
+ * - AddTodoInput: 입력창 및 추가 버튼
+ * - TaskSection: 할 일/완료된 항목의 리스트 섹션
+ * - CheckItem: 개별 할 일 항목
+ */
+
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Button from "@/components/common/Button";
 import Header from "@/components/common/Header";
-import Input from "@/components/common/Input";
 import TaskSection from "@/components/Home/TaskSection";
 import CheckItem from "@/components/Home/CheckItem";
 import instance from "@/utils/axios";

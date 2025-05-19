@@ -1,3 +1,18 @@
+/**
+ * CheckItem 컴포넌트
+ *
+ * - 하나의 할 일 항목을 렌더링하는 컴포넌트
+ * - 체크박스 버튼으로 완료 여부를 토글할 수 있으며,
+ *   항목 텍스트 클릭 시 상세 페이지(`/[id]`)로 이동
+ * - 로딩 중에는 체크박스가 비활성화되고 로딩 스피너가 표시
+ *
+ * @param id 할 일 항목의 고유 ID (라우팅 시 사용)
+ * @param label 항목에 표시될 텍스트 내용
+ * @param checked 체크 상태 (완료 여부)
+ * @param onToggle 체크 상태를 변경할 때 실행되는 콜백
+ * @param isLoading 토글 요청 중 여부 (로딩 스피너 표시 및 버튼 비활성화)
+ */
+
 "use client";
 
 import { useRouter } from "next/navigation";

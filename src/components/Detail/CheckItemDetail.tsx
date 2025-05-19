@@ -1,3 +1,16 @@
+/**
+ * CheckItemDetail 컴포넌트
+ *
+ * 체크박스와 라벨 텍스트를 포함하는 할 일 아이템 UI
+ * 완료 상태에 따라 스타일이 변경되며, 라벨 텍스트 수정 가능
+ * 입력 필드는 입력 길이에 맞춰 자동으로 너비가 조절
+ *
+ * @param label 현재 표시될 텍스트 값
+ * @param isCompleted 체크 완료 여부
+ * @param handleCompleted 체크 상태 토글 함수
+ * @param onLabelChange 입력된 텍스트 변경 핸들러
+ */
+
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 

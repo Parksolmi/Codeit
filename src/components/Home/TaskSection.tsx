@@ -1,3 +1,15 @@
+/**
+ * TaskSection 컴포넌트
+ *
+ * - "할 일(To-do)" 또는 "완료(Done)" 리스트를 보여주는 섹션
+ * - 항목이 없을 경우(type별로) 일러스트와 안내 메시지를 보여줌
+ * - 항목이 있는 경우 자식 요소(children)를 리스트로 렌더링
+ *
+ * @param type 섹션 유형 ("todo" | "done") — 보여줄 이미지 및 텍스트 스타일에 사용됨
+ * @param isEmpty 항목이 비어있는지 여부 (true일 경우 빈 상태 UI 렌더링)
+ * @param children 실제 할 일 항목 혹은 안내 메시지 노드
+ */
+
 import Image from "next/image";
 
 interface TaskSectionProps {

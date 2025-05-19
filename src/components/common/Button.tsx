@@ -1,3 +1,19 @@
+/**
+* 공통 Button 컴포넌트
+* 기본 버튼 또는 제출용 버튼 등 다양한 타입을 지원
+* 아이콘, 로딩 스피너, 텍스트 반전 등 커스터마이징이 가능
+
+* @param type 버튼의 HTML 타입 (button, submit, reset) - 기본값: undefined
+* @param children 버튼 내부에 표시될 텍스트 또는 노드
+* @param bgColor 활성 상태일 때 배경색 클래스 (Tailwind) - 기본값: bg-slate-200
+* @param textColor 텍스트 색상 클래스 (Tailwind) - 기본값: text-black
+* @param onClick 버튼 클릭 시 실행될 함수
+* @param active 버튼이 활성 상태인지 여부 (true일 경우 bgColor 적용)
+* @param iconSrc 아이콘 이미지 경로 (왼쪽 아이콘으로 렌더링됨)
+* @param isLoading 로딩 중 여부 (로딩 스피너 표시 및 내용 비가시화)
+* @param textInvert true일 경우 텍스트/아이콘에 filter invert 적용 (주로 어두운 배경에 사용)
+*/
+
 import Image from "next/image";
 import { SyncLoader } from "react-spinners";
 

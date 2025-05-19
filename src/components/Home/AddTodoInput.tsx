@@ -1,3 +1,14 @@
+/**
+ * AddTodoInput 컴포넌트
+ *
+ * - 할 일을 입력하고 제출할 수 있는 인풋 + 버튼 조합 컴포넌트
+ * - 내부적으로 input 상태를 관리하며, Enter 키나 버튼 클릭 시 제출
+ * - 부모로부터 전달받은 onSubmit 콜백으로 입력된 텍스트를 전달
+ *
+ * @param onSubmit 입력된 할 일 텍스트를 전달받아 처리하는 콜백 함수
+ * @param isSubmitting 할 일 등록 중인지 여부 (중복 제출 방지 및 로딩 표시용)
+ */
+
 import React, { useState } from "react";
 import Input from "@/components/common/Input";
 import Button from "../common/Button";

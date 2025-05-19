@@ -1,3 +1,25 @@
+/**
+ * Detail 페이지 컴포넌트
+ *
+ * - 특정 할 일 항목의 상세 정보를 조회하고 수정하거나 삭제할 수 있는 페이지
+ * - 이름, 완료 상태, 메모, 이미지 업로드 필드를 포함하며 상태 변경을 서버에 반영
+ * - 입력이 변경되었을 경우 "수정완료" 버튼이 활성화되며, 이미지 업로드는 유효성 검사(영문 이름, 5MB 이하)를 거침
+ * - 삭제 시 사용자에게 확인을 요청하고 삭제 후 메인 페이지로 이동
+ *
+ * 주요 기능:
+ * - GET: `/api/{TENANT_ID}/items/:id` → 초기 할 일 데이터 로드
+ * - PATCH: `/api/{TENANT_ID}/items/:id` → 수정 완료 처리
+ * - DELETE: `/api/{TENANT_ID}/items/:id` → 할 일 삭제
+ * - POST: `/api/{TENANT_ID}/images/upload` → 이미지 업로드 처리
+ *
+ * 사용 컴포넌트:
+ * - Header: 상단 헤더
+ * - CheckItemDetail: 제목 및 완료 상태 입력 UI
+ * - ImageUploadBox: 이미지 업로드 박스
+ * - Memo: 메모 입력창
+ * - Button: 공통 버튼 UI
+ */
+
 "use client";
 
 import Button from "@/components/common/Button";

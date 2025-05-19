@@ -1,3 +1,14 @@
+/**
+ * Memo 컴포넌트
+ *
+ * - 사용자가 메모를 입력할 수 있는 텍스트 영역 컴포넌트
+ * - 배경 이미지(/images/memo.png)를 활용해 메모지 형태로 스타일링
+ * - 외부에서 `value` 상태를 제어하는 controlled component
+ *
+ * @param value 현재 메모 textarea에 표시되는 값
+ * @param onChange 사용자가 입력을 변경할 때 호출되는 콜백 (e.target.value 전달)
+ */
+
 interface MemoProps {
   value: string;
   onChange: (value: string) => void;
