@@ -8,6 +8,7 @@ import TaskSection from "@/components/Home/TaskSection";
 import CheckItem from "@/components/Home/CheckItem";
 import instance from "@/utils/axios";
 import { SyncLoader } from "react-spinners";
+import AddTodoInput from "@/components/Home/AddTodoInput";
 
 interface TodoItem {
   id: number;
@@ -26,19 +27,16 @@ export default function Home() {
 
   const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID;
 
-  const handleAddTodo = async () => {
-    if (!inputValue.trim()) return;
-    else if (isAdding) return;
+  const handleAddTodo = async (value: string) => {
+    if (!value.trim() || isAdding) return;
 
     setIsAdding(true);
     try {
       await instance.post(`/api/${TENANT_ID}/items`, {
-        name: inputValue.trim(),
+        name: value.trim(),
       });
 
-      setInputValue("");
       await handleGetTodos();
-      console.log("할 일 등록 완료");
     } catch (err) {
       console.error("에러 발생:", err);
     } finally {
@@ -101,22 +99,7 @@ export default function Home() {
       <main className="flex justify-center">
         <div className="w-full flex flex-col">
           <div className="flex justify-center flex-row items-center gap-4 mt-6 w-full max-w-[1000px] px-4 mx-auto">
-            <Input
-              value={inputValue}
-              placeholder={"할 일을 입력해주세요"}
-              onChange={setInputValue}
-            />
-            <Button
-              active={inputValue.trim().length > 0}
-              bgColor="bg-violet-600"
-              textColor="text-slate-900"
-              onClick={handleAddTodo}
-              iconSrc="/images/plus-icon.svg"
-              isLoading={isAdding}
-              textInvert={true}
-            >
-              추가하기
-            </Button>
+            <AddTodoInput isSubmitting={isAdding} onSubmit={handleAddTodo} />
           </div>
 
           {!isFetched ? (

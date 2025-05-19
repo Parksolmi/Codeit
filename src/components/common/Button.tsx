@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SyncLoader } from "react-spinners";
 
 interface ButtonProps {
+  type?: "button" | "submit" | "reset";
   children?: React.ReactNode;
   bgColor?: string;
   textColor?: string;
@@ -13,6 +14,7 @@ interface ButtonProps {
 }
 
 export default function Button({
+  type,
   children,
   bgColor = "bg-slate-200",
   textColor = "text-black",
@@ -27,6 +29,7 @@ export default function Button({
 
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`
         h-[48px]
